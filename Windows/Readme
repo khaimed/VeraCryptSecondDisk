@@ -1,0 +1,78 @@
+VeraCrypt Windows Setup Instructions
+====================================
+
+This directory contains official VeraCrypt installers for Windows (64-bit and ARM64).
+
+Included Files:
+---------------
+
+1. VeraCrypt Setup 1.26.20.exe
+   - Standard EXE installer for Windows 10/11 (x64 and ARM64)
+   - Recommended for most users
+
+2. VeraCrypt_Setup_x64_1.26.20.msi
+   - MSI installer for enterprise deployment (x64 only)
+   - Useful for system administrators or scripted installs
+
+3. VeraCrypt Portable 1.26.20.exe
+   - No installation required
+   - Ideal for use on external drives (USB/SSD)
+   - Leaves no files on the system
+
+4. VeraCrypt_1.26.20_Windows_Symbols.zip
+   - Debugging symbols (for developers or advanced users)
+   - Not needed for regular use
+
+System Requirements:
+--------------------
+- Windows 10 or 11 (x64)
+- Administrator rights (for installed versions)
+
+Installation Instructions:
+--------------------------
+
+Option A: Using the EXE Installer
+---------------------------------
+1. Double-click `VeraCrypt Setup 1.26.20.exe`
+2. Click "Yes" if prompted by User Account Control
+3. Choose "Install" (not "Extract")
+4. Accept the license agreement
+5. Select installation directory (default is recommended)
+6. Click "Install" and then "Finish"
+
+Option B: Using the MSI Installer (x64 only)
+--------------------------------------------
+1. Double-click `VeraCrypt_Setup_x64_1.26.20.msi`
+2. Follow the wizard to complete installation
+3. This method is preferred for enterprise scripting or group policy deployment
+
+Option C: Using the Portable Version
+------------------------------------
+1. Double-click `VeraCrypt Portable 1.26.20.exe`
+2. Choose "Extract" (not "Install")
+3. Choose an extraction location (e.g., a folder on your USB drive)
+4. Open the extracted folder and run `VeraCrypt.exe`
+
+No installation is required; all files remain in the chosen folder.
+
+Optional: Debugging Symbols
+---------------------------
+- `VeraCrypt_1.26.20_Windows_Symbols.zip` contains `.pdb` files
+- Only needed for debugging or building from source
+
+Usage:
+------
+- Launch VeraCrypt from Start Menu or the Portable folder
+- Use the GUI to create, mount, and manage encrypted volumes
+
+Uninstallation:
+---------------
+- If installed via EXE or MSI, go to:
+  Control Panel > Programs > Uninstall a Program > VeraCrypt
+- If using Portable version, simply delete the folder
+
+Notes:
+------
+- Portable version is ideal for use on encrypted USB drives
+- Installed versions integrate VeraCrypt with Windows Explorer for right-click mounting
+- Administrator rights are required for mounting encrypted volumes
