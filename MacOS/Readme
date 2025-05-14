@@ -1,0 +1,71 @@
+VeraCrypt macOS Setup Instructions
+==================================
+
+This directory contains official VeraCrypt installers for macOS, compatible with both Intel and Apple Silicon (M1/M2/M3) Macs.
+
+Included Files:
+---------------
+
+1. VeraCrypt_1.26.20.dmg
+   - Compatible with Intel Macs using **OSXFUSE**
+   - Use this version if you are running macOS on an Intel processor and have OSXFUSE installed
+
+2. VeraCrypt_FUSE-T_1.26.20.dmg
+   - Compatible with both Intel and Apple Silicon (M1/M2/M3) Macs using **FUSE-T**
+   - Recommended version for modern Macs
+   - Does **not require OSXFUSE**, uses the open-source replacement FUSE-T
+
+System Requirements:
+--------------------
+- macOS 10.15 or later
+- Administrator privileges
+- FUSE library (either OSXFUSE or FUSE-T) depending on the version used
+
+Installation Instructions:
+--------------------------
+
+Step 1: Choose the Correct Version
+----------------------------------
+- **Apple Silicon (M1/M2/M3)** → Use `VeraCrypt_FUSE-T_1.26.20.dmg`
+- **Intel Mac with OSXFUSE**  → Use `VeraCrypt_1.26.20.dmg`
+
+Step 2: Install the FUSE Library
+--------------------------------
+- For FUSE-T version:
+  - If prompted, allow kernel extension in System Preferences > Security & Privacy
+  - Reboot if necessary
+- For OSXFUSE version:
+  - Make sure OSXFUSE is already installed (https://osxfuse.github.io)
+  - Reboot if installation requires it
+
+Step 3: Install VeraCrypt
+-------------------------
+1. Double-click the `.dmg` file to mount it
+2. Inside the mounted volume, double-click the `.pkg` installer
+3. Follow the installation wizard
+4. VeraCrypt will be installed in `/Applications`
+
+Launching VeraCrypt:
+--------------------
+- Go to Launchpad or Finder > Applications > VeraCrypt
+- You may be prompted to approve the application in:
+  System Settings > Security & Privacy > General
+
+Usage:
+------
+- Create or mount encrypted volumes via the graphical interface
+- You can also use the command-line version from Terminal:
+  /Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt
+
+Uninstallation:
+---------------
+1. Open Terminal
+2. Run the uninstaller:
+   sudo "/Applications/VeraCrypt_Uninstall.app/Contents/MacOS/VeraCrypt_Uninstall"
+
+Notes:
+------
+- Apple Silicon users are strongly encouraged to use the **FUSE-T** version
+- Full-disk encryption is not supported on macOS — only container or external volume encryption
+- Administrator password is required to mount encrypted volumes
+
