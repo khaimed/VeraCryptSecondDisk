@@ -7,7 +7,7 @@ Use the appropriate README below based on your system.
 
 ------------------------------------------------------------
 [ Linux ]
-- For any system:                   Linux/any/README
+- For any system:                   Linux/Any/README
 - For graphical interface (GUI):    Linux/GUI/README
 - For terminal-only systems:        Linux/Console/README
 
