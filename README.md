@@ -7,16 +7,17 @@ Use the appropriate README below based on your system.
 
 ------------------------------------------------------------
 [ Linux ]
-- For graphical interface (GUI):    README_Linux_GUI.txt
-- For terminal-only systems:        README_Linux_Console.txt
+- For any system:                   Linux/any/README
+- For graphical interface (GUI):    Linux/GUI/README
+- For terminal-only systems:        Linux/Console/README
 
 ------------------------------------------------------------
 [ Windows ]
-- Installer & portable setup:       README_Windows.txt
+- Installer & portable setup:       Windows/README
 
 ------------------------------------------------------------
 [ macOS ]
-- Intel or Apple Silicon support:   README_macOS.txt
+- Intel or Apple Silicon support:   MacOS/README
 
 ------------------------------------------------------------
 [ Security Note ]
