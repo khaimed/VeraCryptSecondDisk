@@ -1,0 +1,88 @@
+VeraCrypt GUI Linux Setup Instructions
+======================================
+
+This directory contains VeraCrypt GUI installers for multiple Linux distributions.
+
+What Is This?
+-------------
+These packages install the full graphical version of VeraCrypt, allowing you to create, mount, and manage encrypted volumes using a desktop interface.
+
+System Requirements:
+--------------------
+- Linux with x86_64 (64-bit) architecture
+- A supported desktop environment (GNOME, KDE, XFCE, etc.)
+- Superuser (sudo) access
+
+Included Packages:
+------------------
+Select the installer that matches your distribution and version:
+
+For DEB-based systems (Ubuntu, Debian):
+  - veracrypt-126.20-Ubuntu-20.04-amd64.deb        (Ubuntu 20.04 LTS)
+  - veracrypt-126.20-Ubuntu-24.04-amd64.deb        (Ubuntu 24.04 LTS)
+  - veracrypt-126.20-Debian-12-amd64.deb           (Debian 12 Bookworm)
+
+For RPM-based systems (Red Hat, CentOS, Fedora, openSUSE):
+  - veracrypt-126.20-CentOS-6-x86_64.rpm           (CentOS 6)
+  - veracrypt-126.20-CentOS-7-x86_64.rpm           (CentOS 7)
+  - veracrypt-126.20-CentOS-8-x86_64.rpm           (CentOS 8)
+  - veracrypt-126.20-Fedora-40-x86_64.rpm          (Fedora 40)
+  - veracrypt-126.20-openSUSE-15-x86_64.rpm        (openSUSE Leap 15.x)
+
+Installation Instructions:
+--------------------------
+
+For Ubuntu / Debian (.deb packages):
+
+1. Open a terminal
+2. Install using `dpkg`:
+   sudo dpkg -i veracrypt-<version>.deb
+3. If there are dependency issues:
+   sudo apt-get install -f
+
+For CentOS / Fedora / openSUSE (.rpm packages):
+
+1. Open a terminal
+2. Install using `rpm` or your distro's package manager:
+   sudo rpm -ivh veracrypt-<version>.rpm
+   or:
+   sudo dnf install ./veracrypt-<version>.rpm
+   or:
+   sudo zypper install veracrypt-<version>.rpm
+
+Launching VeraCrypt:
+--------------------
+After installation, you can start VeraCrypt from your application menu, or run from terminal:
+   veracrypt
+
+Usage:
+------
+- Create volumes
+- Encrypt external drives or partitions
+- Mount encrypted volumes (requires password)
+- Save and load favorite volumes
+
+Uninstallation:
+---------------
+For DEB systems:
+   sudo dpkg -r veracrypt
+
+For RPM systems:
+   sudo rpm -e veracrypt
+
+Optional: PGP Signature Verification:
+-------------------------------------
+If you downloaded a `.sig` file for integrity check:
+
+1. Import the public key:
+   gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x54DDD393
+
+2. Verify the file:
+   gpg --verify veracrypt-<version>.sig veracrypt-<version>.deb/rpm
+
+A "Good signature" message confirms the file is authentic.
+
+Notes:
+------
+- These packages provide the full GUI interface.
+- For headless or server usage, refer to VeraCrypt Console installers.
