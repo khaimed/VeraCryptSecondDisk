@@ -1,0 +1,74 @@
+VeraCrypt Console-Only Linux Setup Instructions
+===============================================
+
+This folder contains VeraCrypt console-mode installers for various Linux distributions.
+
+What Is This?
+-------------
+These packages install the console version of VeraCrypt (no GUI), useful for servers, terminal-only systems, minimal setups, or advanced scripting.
+
+System Requirements:
+--------------------
+- Linux with 64-bit x86_64 architecture
+- Superuser (sudo) access
+
+Included Packages:
+------------------
+Use the package that matches your Linux distribution and version.
+
+For DEB-based systems (Ubuntu, Debian):
+  - veracrypt-console-1.26.20-Ubuntu-2004-amd64.deb         (Ubuntu 20.04)
+  - veracrypt-console-126.20-Ubuntu-2404-amd64.deb          (Ubuntu 24.04)
+  - veracrypt-console-126.20-Debian-12-amd64.deb            (Debian 12)
+
+For RPM-based systems (Red Hat, CentOS, Fedora, openSUSE):
+  - veracrypt-console-12620-CentOS-6-x86_64.rpm             (CentOS 6)
+  - veracrypt-console-12620-CentOS-7-x86_64.rpm             (CentOS 7)
+  - veracrypt-console-12620-CentOS-8-x86_64.rpm             (CentOS 8)
+  - veracrypt-console-1.2620-Fedora-40-x86_64.rpm           (Fedora 40)
+  - veracrypt-console-126.20-openSUSE-15-x86_64.rpm         (openSUSE 15.x)
+
+Installation Instructions:
+--------------------------
+For DEB-based systems (Ubuntu, Debian):
+
+1. Open a terminal
+2. Run:
+   sudo dpkg -i veracrypt-console-<version>.deb
+3. If you encounter dependency errors, fix them using:
+   sudo apt-get install -f
+
+For RPM-based systems (CentOS, Fedora, openSUSE):
+
+1. Open a terminal
+2. Run:
+   sudo rpm -ivh veracrypt-console-<version>.rpm
+3. If on a newer system (e.g. Fedora), you can also use:
+   sudo dnf install ./veracrypt-console-<version>.rpm
+
+Usage:
+------
+After installation, run VeraCrypt from the terminal:
+
+   veracrypt --help              Show help
+   veracrypt -l                  List mounted volumes
+   veracrypt -t -c               Create a new volume
+   veracrypt -t --mount <file>  Mount an existing volume (will prompt for password)
+
+Note:
+-----
+The `-t` flag enables text (console) mode interaction.
+
+Uninstallation:
+---------------
+For DEB systems:
+   sudo dpkg -r veracrypt-console
+
+For RPM systems:
+   sudo rpm -e veracrypt-console
+
+PGP Verification:
+-----------------
+Official .deb and .rpm packages are signed. If you wish to verify integrity, refer to VeraCrypt’s official instructions and use the public key:
+   gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x54DDD393
+
