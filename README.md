@@ -1,5 +1,4 @@
 # VeraCrypt Multi-Platform Setup Index
-====================================
 
 This SSD contains VeraCrypt installers and setup instructions for all major operating systems.
 
