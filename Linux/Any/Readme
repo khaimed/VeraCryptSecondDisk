@@ -1,0 +1,48 @@
+VeraCrypt Linux Setup Instructions
+==================================
+
+Included Files:
+---------------
+- veracrypt-1.26.20-setup.tar.bz2        : Standard installer for modern 64-bit Linux systems
+- veracrypt-1.26.20-setup.tar.bz2.sig    : Optional PGP signature for verifying the installer
+- veracrypt-1.26.20-x86-legacy-setup.tar.bz2 : Installer for older 32-bit CPUs without SSE2 support
+
+System Requirements:
+--------------------
+- 64-bit Linux OS (Ubuntu, Debian, Fedora, Arch, etc.)
+- tar, bash, sudo must be installed
+- Optional: GnuPG (gpg) for verifying the PGP signature
+
+Installation Instructions:
+--------------------------
+1. Extract the archive:
+   tar -xjf veracrypt-1.26.20-setup.tar.bz2
+
+2. Make the installer executable:
+   chmod +x veracrypt-1.26.20-setup-gui-x64
+
+3. Run the installer:
+   sudo ./veracrypt-1.26.20-setup-gui-x64
+
+   Alternatively, use the console version:
+   sudo ./veracrypt-1.26.20-setup-console-x64
+
+Optional: Verifying the Installer Using PGP:
+--------------------------------------------
+1. Import the VeraCrypt public key:
+   gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 0x54DDD393
+
+2. Verify the archive:
+   gpg --verify veracrypt-1.26.20-setup.tar.bz2.sig veracrypt-1.26.20-setup.tar.bz2
+
+   A valid signature will output:
+   "Good signature from IDRIX..."
+
+Uninstalling VeraCrypt:
+-----------------------
+To uninstall VeraCrypt, run:
+   sudo veracrypt-uninstall.sh
+
+Legacy Installer:
+-----------------
+Use veracrypt-1.26.20-x86-legacy-setup.tar.bz2 only if you are on a 32-bit system that does not support SSE2.
